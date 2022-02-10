@@ -1,7 +1,11 @@
-import { AppRouter } from "./routes/AppRouter"
+import { useReducer } from "react";
+import { AuthContext, AuthProvider } from "./auth/authContext";
+import { AppRouter } from "./routes/AppRouter";
 
 export const HeroesApp = () => {
   return (
-    <AppRouter />
-  )
-}
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
+  );
+};
