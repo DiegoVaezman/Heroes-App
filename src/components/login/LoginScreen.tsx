@@ -8,7 +8,8 @@ export const LoginScreen = () => {
 
   const handleLogin = () => {
     login("Diego");
-    navigate("/marvel", { replace: true });
+    const lastPath = localStorage.getItem("lastPath") || "/marvel";
+    navigate(lastPath, { replace: true });
   };
 
   return (

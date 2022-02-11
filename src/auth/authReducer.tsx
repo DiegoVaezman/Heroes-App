@@ -1,5 +1,5 @@
 export interface AuthState {
-  name: string;
+  name?: string;
   logged: boolean;
 }
 
@@ -19,7 +19,6 @@ export const AuthReducer = (
       };
     case "logout":
       return {
-        name: "",
         logged: false,
       };
 
