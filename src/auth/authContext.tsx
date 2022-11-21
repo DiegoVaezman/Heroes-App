@@ -1,42 +1,47 @@
-import { createContext, useEffect, useReducer } from "react";
-import { AuthState, AuthReducer } from "./authReducer";
+import { createContext, useEffect, useReducer } from 'react';
+import { AuthState, AuthReducer } from './authReducer';
 
 type AuthContextProps = {
-  user: AuthState;
-  login: (name: string) => void;
-  logout: () => void;
+    userState: AuthState;
+    login: (name: string) => void;
+    logout: () => void;
 };
 
 const init = () => {
-  return JSON.parse(localStorage.getItem("user")!) || { logged: false };
+    const userLocalStorage = localStorage.getItem('user');
+    console.log(userLocalStorage);
+    const user = userLocalStorage ? JSON.parse(userLocalStorage) : null;
+
+    return { logged: !!userLocalStorage, user };
 };
 
 export const AuthContext = createContext({} as AuthContextProps);
 
 export const AuthProvider = ({ children }: any) => {
-  const [user, dispatch] = useReducer(AuthReducer, {}, init);
+    const [userState, dispatch] = useReducer(AuthReducer, {}, init);
 
-  useEffect(() => {
-    if (!user) return;
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
+    useEffect(() => {
+        if (!userState.logged) return;
+        localStorage.setItem('user', JSON.stringify(userState));
+    }, [userState]);
 
-  const login = (name: string) => {
-    dispatch({
-      type: "login",
-      payload: { name: name },
-    });
-  };
+    const login = (name: string) => {
+        dispatch({
+            type: 'login',
+            payload: { name: name },
+        });
+    };
 
-  const logout = () => {
-    dispatch({
-      type: "logout",
-    });
-  };
+    const logout = () => {
+        localStorage.removeItem('user');
+        dispatch({
+            type: 'logout',
+        });
+    };
 
-  return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
+    return (
+        <AuthContext.Provider value={{ userState, login, logout }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };

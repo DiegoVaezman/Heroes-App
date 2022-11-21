@@ -3,7 +3,7 @@ export interface AuthState {
   logged: boolean;
 }
 
-type AuthAction =
+export type AuthAction =
   | { type: "login"; payload: { name: string } }
   | { type: "logout" };
 
