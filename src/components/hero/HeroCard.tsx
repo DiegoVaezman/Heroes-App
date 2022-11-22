@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Hero } from '../../interfaces/Interfaces';
 import './HeroCard.css';
+const basePath = process.env.REACT_APP_PUBLIC_URL;
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
     hero: Hero;
 }
 
 export const HeroCard = ({ hero }: Props) => {
-    const imagePath = `./assets/${hero.id}.jpg`;
+    const imagePath = `/${basePath}/assets/${hero.id}.jpg`;
     return (
         <Link
             to={`/hero/${hero.id}`}

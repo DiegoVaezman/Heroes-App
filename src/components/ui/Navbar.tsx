@@ -12,10 +12,6 @@ export const Navbar = () => {
         navigate('/login', { replace: true });
     };
 
-    useEffect(() => {
-        console.log('userstate', userState);
-    }, [userState]);
-
     return (
         <nav className='navbar navbar-expand-sm navbar-dark bg-dark'>
             <Link className='navbar-brand' to='/'>

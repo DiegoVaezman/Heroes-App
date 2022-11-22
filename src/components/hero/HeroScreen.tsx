@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useParams, Navigate, useNavigate } from 'react-router-dom';
 import { getHeroById } from '../../selectors/getHeroById';
+const basePath = process.env.REACT_APP_PUBLIC_URL;
 
 export const HeroScreen = () => {
     const { heroId } = useParams();
@@ -27,7 +28,7 @@ export const HeroScreen = () => {
     } = hero;
 
     // const imagePath = `/assets/${id}.jpg`;
-    const imagePath = `../assets/${id}.jpg`;
+    const imagePath = `/${basePath}/assets/${id}.jpg`;
 
     return (
         <div className='row mt-5 animate__animated animate__bounceInLeft'>

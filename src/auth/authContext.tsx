@@ -11,7 +11,6 @@ const init = () => {
     const userLocalStorage = localStorage.getItem('user');
     const user = userLocalStorage ? JSON.parse(userLocalStorage) : null;
     const name = user ? user.name : null;
-    console.log('USER CONTEXT LOCSTOR', user);
 
     return { logged: !!userLocalStorage, name };
 };
@@ -23,7 +22,6 @@ export const AuthProvider = ({ children }: any) => {
 
     useEffect(() => {
         if (!userState.logged) return;
-        console.log('SET ITEM USER ON LS WHEN USERSTATE CHANGE', userState);
         localStorage.setItem('user', JSON.stringify(userState));
     }, [userState]);
 
