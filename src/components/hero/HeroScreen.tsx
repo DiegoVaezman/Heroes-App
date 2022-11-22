@@ -28,7 +28,7 @@ export const HeroScreen = () => {
     } = hero;
 
     // const imagePath = `/assets/${id}.jpg`;
-    const imagePath = `/${basePath}/assets/${id}.jpg`;
+    const imagePath = `${basePath}/assets/${id}.jpg`;
 
     return (
         <div className='row mt-5 animate__animated animate__bounceInLeft'>

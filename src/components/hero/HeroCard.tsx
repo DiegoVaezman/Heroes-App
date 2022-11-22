@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 export const HeroCard = ({ hero }: Props) => {
-    const imagePath = `/${basePath}/assets/${hero.id}.jpg`;
+    const imagePath = `${basePath}/assets/${hero.id}.jpg`;
     return (
         <Link
             to={`/hero/${hero.id}`}
