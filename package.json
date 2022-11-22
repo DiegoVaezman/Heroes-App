@@ -1,5 +1,6 @@
 {
   "name": "heroes-app",
+  "homepage": "https://diegovaezman.github.io/Heroes-App/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
