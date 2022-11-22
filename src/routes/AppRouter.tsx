@@ -7,7 +7,7 @@ import { PublicRoute } from './PublicRouter';
 
 export const AppRouter = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route
                     path='/login/*'
@@ -29,6 +29,6 @@ export const AppRouter = () => {
                     }
                 />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
