@@ -8,13 +8,14 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 export const HeroCard = ({ hero }: Props) => {
+    const imagePath = `./assets/${hero.id}.jpg`;
     return (
         <Link
             to={`/hero/${hero.id}`}
             className='my-card animate__animated animate__fadeIn'
         >
             <img
-                src={`/assets/${hero.id}.jpg`}
+                src={imagePath}
                 className='img img-responsive'
                 alt={hero.superhero}
             />

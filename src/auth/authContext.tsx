@@ -9,7 +9,6 @@ type AuthContextProps = {
 
 const init = () => {
     const userLocalStorage = localStorage.getItem('user');
-    console.log(userLocalStorage);
     const user = userLocalStorage ? JSON.parse(userLocalStorage) : null;
 
     return { logged: !!userLocalStorage, user };
