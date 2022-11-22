@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../auth/authContext';
 
@@ -11,6 +11,10 @@ export const Navbar = () => {
         logout();
         navigate('/login', { replace: true });
     };
+
+    useEffect(() => {
+        console.log('userstate', userState);
+    }, [userState]);
 
     return (
         <nav className='navbar navbar-expand-sm navbar-dark bg-dark'>

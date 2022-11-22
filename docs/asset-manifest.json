@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Heroes-App/static/css/main.1caa5bfa.css",
-    "main.js": "/Heroes-App/static/js/main.23911875.js",
-    "index.html": "/Heroes-App/index.html",
-    "main.1caa5bfa.css.map": "/Heroes-App/static/css/main.1caa5bfa.css.map",
-    "main.23911875.js.map": "/Heroes-App/static/js/main.23911875.js.map"
+    "main.css": "/static/css/main.1caa5bfa.css",
+    "main.js": "/static/js/main.06d52e7f.js",
+    "index.html": "/index.html",
+    "main.1caa5bfa.css.map": "/static/css/main.1caa5bfa.css.map",
+    "main.06d52e7f.js.map": "/static/js/main.06d52e7f.js.map"
   },
   "entrypoints": [
     "static/css/main.1caa5bfa.css",
-    "static/js/main.23911875.js"
+    "static/js/main.06d52e7f.js"
   ]
 }
