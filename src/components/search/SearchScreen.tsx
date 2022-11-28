@@ -33,7 +33,7 @@ export const SearchScreen = () => {
                     <h4>Searching</h4>
                     <hr />
 
-                    <form onSubmit={(e) => handleSearch(e)}>
+                    <form role='form' onSubmit={(e) => handleSearch(e)}>
                         <input
                             type='text'
                             placeholder='Search hero'

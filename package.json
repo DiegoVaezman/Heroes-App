@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
     "query-string": "^7.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -16,7 +13,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && rm -rf docs && mv build docs",
-    "test": "react-scripts test",
+    "test": "jest --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,13 +35,18 @@
     ]
   },
   "devDependencies": {
-    "@types/jest": "^27.4.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-flow": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^29.2.3",
     "@types/node": "^17.0.16",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
-    "enzyme": "^3.11.0",
-    "enzyme-to-json": "^3.6.2",
+    "babel-jest": "^29.3.1",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
     "typescript": "^4.5.5"
   }
 }

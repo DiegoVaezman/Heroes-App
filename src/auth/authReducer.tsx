@@ -1,28 +1,28 @@
 export interface AuthState {
-  name?: string;
-  logged: boolean;
+    name?: string;
+    logged: boolean;
 }
 
 export type AuthAction =
-  | { type: "login"; payload: { name: string } }
-  | { type: "logout" };
+    | { type: 'login'; payload: { name: string } }
+    | { type: 'logout' };
 
 export const AuthReducer = (
-  state: AuthState,
-  action: AuthAction
+    state: AuthState,
+    action: AuthAction
 ): AuthState => {
-  switch (action.type) {
-    case "login":
-      return {
-        name: action.payload.name,
-        logged: true,
-      };
-    case "logout":
-      return {
-        logged: false,
-      };
+    switch (action.type) {
+        case 'login':
+            return {
+                name: action.payload.name,
+                logged: true,
+            };
+        case 'logout':
+            return {
+                logged: false,
+            };
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 };
